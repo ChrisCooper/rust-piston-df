@@ -3,14 +3,21 @@ use config::{ConfigError, Config, File};
 
 #[derive(Debug, Deserialize)]
 pub struct GameSettings {
-    map: Map
+    pub map: Map,
+    pub graphics: Graphics
 }
 
 #[derive(Debug, Deserialize)]
-struct Map {
-    x_width: u32,
-    y_length: u32,
-    z_height: u32
+pub struct Map {
+    pub x_width: u32,
+    pub y_length: u32,
+    pub z_height: u32
+}
+
+#[derive(Debug, Deserialize)]
+pub struct Graphics {
+    pub window_width: u32,
+    pub window_height: u32,
 }
 
 impl GameSettings {

@@ -2,3 +2,6 @@ map:
   x_width: 64
   y_length: 64
   z_height: 64
+graphics:
+  window_width: 1000
+  window_height: 700

@@ -16,20 +16,25 @@ mod app;
 mod settings;
 
 use settings::GameSettings;
+use piston::window::WindowSettings;
+use piston::event_loop::*;
+use piston::input::*;
+use glutin_window::GlutinWindow as Window;
+use opengl_graphics::{ GlGraphics, OpenGL };
 
 fn main() {
 
-    let settings = GameSettings::new_from_defaults();
+    let settings = GameSettings::new_from_defaults().unwrap();
 
     // Print out our settings
     println!("Loaded settings:\n{:?}", settings);
 
-    /*let opengl = OpenGL::V3_2;
+    let opengl = OpenGL::V3_2;
 
     // Create an Glutin window.
     let mut window: Window = WindowSettings::new(
         "piston-rust-playground",
-        [200, 200]
+        [settings.graphics.window_width, settings.graphics.window_height]
     )
         .opengl(opengl)
         .exit_on_esc(true)
@@ -51,6 +56,5 @@ fn main() {
         if let Some(u) = e.update_args() {
             app.update(&u);
         }
-    }*/
+    }
 }
-

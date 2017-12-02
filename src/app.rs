@@ -6,13 +6,13 @@ use piston::input::*;
 use opengl_graphics::{ GlGraphics };
 
 pub struct App {
-    gl: GlGraphics,
+    pub gl: GlGraphics,
     // OpenGL drawing backend.
-    rotation: f64   // Rotation for the square.
+    pub rotation: f64   // Rotation for the square.
 }
 
 impl App {
-    fn render(&mut self, args: &RenderArgs) {
+    pub fn render(&mut self, args: &RenderArgs) {
         use graphics::*;
 
         const GREEN: [f32; 4] = [0.0, 1.0, 0.0, 1.0];
@@ -36,7 +36,7 @@ impl App {
         });
     }
 
-    fn update(&mut self, args: &UpdateArgs) {
+    pub fn update(&mut self, args: &UpdateArgs) {
         // Rotate 2 radians per second.
         self.rotation += 2.0 * args.dt;
     }
