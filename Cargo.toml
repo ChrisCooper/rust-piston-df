@@ -7,6 +7,13 @@ authors = ["Chris Cooper <chriscooper1991@gmail.com>"]
 name = "piston-rust-playground"
 
 [dependencies]
+rand = "*"
+config = "0.7"
+serde = "1.0"
+serde_derive = "1.0"
+serde_yaml = "0.7"
+#yaml-rust = "*"
+#serde_yaml = "0.7"
 piston = "0.35.0"
 piston2d-graphics = "0.23.0"
 pistoncore-glutin_window = "0.42.0"
