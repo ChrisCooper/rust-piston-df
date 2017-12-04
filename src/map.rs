@@ -7,10 +7,10 @@ pub struct GameMap {
 
 impl GameMap {
     // fixme: fn update(&mut self, args: &UpdateArgs) {
-    fn update(&mut self) {
+    //fn update(&mut self) {
         // Rotate 2 radians per second.
         //self.rotation += 2.0 * args.dt;
 
         //let secret_number = rand::thread_rng().gen_range(1, 101);
-    }
+    //}
 }

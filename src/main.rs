@@ -32,10 +32,13 @@ fn main() {
     let opengl = OpenGL::V3_2;
 
     // Create an Glutin window.
-    let mut window: Window = WindowSettings::new(
+    let mut window_settings = WindowSettings::new(
         "piston-rust-playground",
-        [settings.graphics.window_width, settings.graphics.window_height]
-    )
+        [settings.graphics.window_width, settings.graphics.window_height],
+    );
+    window_settings.set_fullscreen(settings.graphics.fullscreen);
+
+    let mut window: Window = window_settings
         .opengl(opengl)
         .exit_on_esc(true)
         .build()

@@ -3,5 +3,6 @@ map:
   y_length: 64
   z_height: 64
 graphics:
-  window_width: 1000
-  window_height: 700
+  window_width: 1024
+  window_height: 768
+  fullscreen: false

@@ -18,6 +18,7 @@ pub struct Map {
 pub struct Graphics {
     pub window_width: u32,
     pub window_height: u32,
+    pub fullscreen: bool
 }
 
 impl GameSettings {
