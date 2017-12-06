@@ -8,15 +8,12 @@ extern crate opengl_graphics;
 #[macro_use]
 extern crate serde_derive;
 
-
-//use std::io;
-
 mod map;
 mod app;
 mod settings;
 
 use settings::GameSettings;
-use piston::window::WindowSettings;
+use piston::window::{ AdvancedWindow, WindowSettings };
 use piston::event_loop::*;
 use piston::input::*;
 use glutin_window::GlutinWindow as Window;
@@ -44,11 +41,10 @@ fn main() {
         .build()
         .unwrap();
 
+    window.set_capture_cursor(settings.graphics.capture_cursor);
+
     // Create a new game and run it.
-    let mut app = app::App {
-        gl: GlGraphics::new(opengl),
-        rotation: 0.0
-    };
+    let mut app = app::App::new(GlGraphics::new(opengl));
 
     let mut events = Events::new(EventSettings::new());
     while let Some(e) = events.next(&mut window) {
@@ -58,6 +54,11 @@ fn main() {
 
         if let Some(u) = e.update_args() {
             app.update(&u);
+        }
+
+        app.process_inputs(&e);
+
+        if let Some(_args) = e.idle_args() {
         }
     }
 }
